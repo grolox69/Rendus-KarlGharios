@@ -1,1 +1,0 @@
-### This folder contains Servlet JAR files only
