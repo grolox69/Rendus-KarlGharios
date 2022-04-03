@@ -1,16 +1,17 @@
 package com.example.glassfishservletejb;
 
 import java.io.*;
+import javax.ejb.EJB;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
 @WebServlet(name = "helloServlet", value = "/hello-servlet")
 public class HelloServlet extends HttpServlet {
-    private static Hello sayHelloBean;
+    @EJB
+    private Hello sayHelloBean;
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
-        sayHelloBean = new HelloBean();
         // Hello
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
